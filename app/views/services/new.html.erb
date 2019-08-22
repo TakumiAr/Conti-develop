@@ -1,0 +1,28 @@
+<h1>Services#new</h1>
+<p>Find me in app/views/services/new.html.erb</p>
+
+<%= form_with(model: @service, local: true ) do |form| %>
+  <% if @service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @service.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @service.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="service_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="service_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+  
+<% end %>
+<%= link_to "プロフィールに戻る", user_path(current_user.id) %>

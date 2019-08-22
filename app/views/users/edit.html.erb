@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>マイページ編集</title>
+<style>
+/* 本文に関連のないスタイル */
+body {
+  padding-top: 2rem;
+}
+.container {
+  margin-bottom: 2rem;
+}
+</style>
+</head>
+<body>
+<h1 class="text-center mb-5">マイページ編集フォーム</h1>
+<div class="container">
+  <form>
+    <!-- メールアドレス入力 -->
+    <div class="form-group">
+      <label for="email1">メールアドレス</label>
+      <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="メールアドレスを入力">
+      <small id="emailHelp" class="form-text text-muted">あなたに関する個人情報を収集することはありません。</small>
+    </div>
+    <!-- パスワード入力 -->
+    <div class="form-group">
+      <label for="password1">パスワード</label>
+      <input type="password" class="form-control" id="password1" placeholder="パスワードを入力"> </div>
+    <!-- プルダウンメニュー -->
+    <div class="form-group">
+      <label for="select1">楽器</label>
+      <select class="form-control" id="select1">
+        <option>ギター</option>
+        <option>ピアノ</option>
+        <option>ボーカル</option>
+        <option>DTM</option>
+        <option>ドラム</option>
+      </select>
+    </div>
+    <!-- 複数行のテキスト入力欄 -->
+    <div class="form-group">
+      <label for="textarea1">プロフィール内容</label>
+      <textarea class="form-control" id="textarea1" rows="3"></textarea>
+    </div>
+    <!-- ファイル選択 -->
+    <div class="form-group">
+      <label for="file1">プロフィール画像を選択</label>
+      <input type="file" class="form-control-file" id="file1">
+    </div>
+    <!-- ファイル選択 -->
+    <div class="form-group">
+      <label for="file1">背景画像を選択</label>
+      <input type="file" class="form-control-file" id="file1">
+    </div>
+    <!-- ラジオボタン -->
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radios" id="radios1" value="option1" checked>
+      <label class="form-check-label" for="radios1">
+        男
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="radios" id="radios2" value="option2">
+      <label class="form-check-label" for="radios2">
+        女
+      </label>
+    </div>
+    <!-- 送信ボタン -->
+    <button type="submit" class="btn btn-primary">送信</button>
+  </form>
+</div>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

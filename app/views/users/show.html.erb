@@ -1,0 +1,5 @@
+<h1>プロフィールページ</h1>
+名前: <%= @user.name%><br>
+<%= link_to 'Recuest', new_request_path %><br>
+<%= link_to 'Products',user_products_path(@user.id) %><br>
+<%= link_to 'Top', root_path %>
