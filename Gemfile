@@ -20,6 +20,8 @@ gem 'activeadmin'
 gem 'active_admin_flat_skin'
 gem 'font-awesome-sass'
 gem 'image_processing'
+gem 'shrine'
+gem 'scrollify'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

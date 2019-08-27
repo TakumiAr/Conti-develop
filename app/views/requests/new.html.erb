@@ -1,28 +1,60 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
-
-<%= form_with(model: @request, local: true ) do |form| %>
-  <% if @request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @request.errors.count %>件のエラーがあります。</h2>
-      <ul>
-
-      <% @request.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>マイページ編集</title>
+<style>
+/* 本文に関連のないスタイル */
+body {
+  padding-top: 2rem;
+}
+.container {
+  margin-bottom: 2rem;
+}
+</style>
+</head>
+<body>
+<h1 class="text-center mb-5">リクエスト作成フォーム</h1>
+<div class="container">
+  <form>
+    <!-- リクエストタイトル入力 -->
+    <div class="form-group">
+      <label for="email1">リクエストタイトル</label>
+      <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="リクエストタイトルを入力">
+      <small id="emailHelp" class="form-text text-muted">まだ送れません</small>
     </div>
-  <% end %>
 
-  <div class="request_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="request_title">
-    <%= form.label :content %>
-    <%= form.rich_text_area :content %>
-  </div>
-  <%= form.submit %>
-  
-<% end %>
+    <!-- 複数行のテキスト入力欄 -->
+    <div class="form-group">
+      <label for="textarea1">リクエスト内容</label>
+      <textarea class="form-control" id="textarea1" rows="3"></textarea>
+    </div>
+    <!-- ファイル選択 -->
+    <div class="form-group">
+      <label for="file1">画像を選択</label>
+      <input type="file" class="form-control-file" id="file1">
+    </div>
+
+        <!-- リクエストタイトル入力 -->
+    <div class="form-group">
+      <label for="email1">提案期限</label>
+      <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="提案期限を入力">
+    </div>
+        <!-- リクエストタイトル入力 -->
+    <div class="form-group">
+      <label for="email1">予算目安</label>
+      <input type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="提案期限を入力">
+    </div>
+
+    <!-- 送信ボタン -->
+    <button type="submit" class="btn btn-primary">リクエストする</button>
+  </form>
+</div>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
 <%= link_to "プロフィールに戻る", user_path(current_user.id) %>

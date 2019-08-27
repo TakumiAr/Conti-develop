@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   def index
+    @users = User.all
   end
 
   def show
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to mypage_users_path
+      redirect_to users_mypage_path
     else
       render 'edit'
     end
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :profile, :avatar_image, :password, :password_confirmation)
   end
 
   def set_user

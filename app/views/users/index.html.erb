@@ -1,5 +1,12 @@
-ゆーざー一覧
-
-eachで回すやつ
-
-検索機能とかも入れる。
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">絞り込み</div>
+    <div class="col-md-9" >
+      <% @users.reverse_each do |user| %>
+          <%= link_to user_path(user.id) do %>
+            <%= image_tag user.avatar_image_url, size: 150, class: "img-responsive" %>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

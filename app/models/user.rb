@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true #追記
   validates :profile, length: { maximum: 200 }
+  include ImageUploader[:avatar_image]
 end

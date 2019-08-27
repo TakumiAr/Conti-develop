@@ -73,7 +73,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arbre (1.2.1)
       activesupport (>= 3.0.0)
-    autoprefixer-rails (9.6.1)
+    autoprefixer-rails (9.6.1.1)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -110,6 +110,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
+    content_disposition (1.0.0)
     crass (1.0.4)
     devise (4.7.0)
       bcrypt (~> 3.0)
@@ -118,6 +119,8 @@ GEM
       responders
       warden (~> 1.2.3)
     dotenv (0.7.0)
+    down (4.8.1)
+      addressable (~> 2.5)
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.11.1)
@@ -266,9 +269,13 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    scrollify (0.1.0)
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    shrine (2.19.3)
+      content_disposition (~> 1.0)
+      down (~> 4.1)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -340,7 +347,9 @@ DEPENDENCIES
   rails (~> 6.0.0)
   rails-erd
   sass-rails (~> 5.0)
+  scrollify
   selenium-webdriver
+  shrine
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

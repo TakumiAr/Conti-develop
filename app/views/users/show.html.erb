@@ -1,5 +1,17 @@
 <h1>プロフィールページ</h1>
-名前: <%= @user.name%><br>
-<%= link_to 'Recuest', new_request_path %><br>
-<%= link_to 'Products',user_products_path(@user.id) %><br>
-<%= link_to 'Top', root_path %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            名前: <%= @user.name%><br>
+            <%= @user.profile%><br>
+            <%= @user.email%><br>
+            <%= image_tag @user.avatar_image_url, onerror: "assets/onerror.png", size: 200, class: "img-responsive" %><br>
+            <%= link_to 'Products',user_products_path(@user.id) %><br>
+            <%= link_to 'Top', root_path %>
+        </div>
+        <div class="col-md-4" >
+            <%= link_to 'Recuest', new_request_path %><br>
+        </div>
+    </div>
+</div>

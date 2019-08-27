@@ -6,8 +6,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :name, null: false
       t.string :instrument
       t.text :profile
-      t.integer :avatar_image_id
-      t.integer :background_image_id
+      t.text :avatar_image_data
+      t.text :background_image_data
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

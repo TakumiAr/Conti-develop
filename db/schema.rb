@@ -81,6 +81,10 @@ ActiveRecord::Schema.define(version: 2019_08_21_152420) do
 
   create_table "requests", force: :cascade do |t|
     t.string "title"
+    t.text "content"
+    t.string "image"
+    t.string "proposal_deadline"
+    t.string "budget_estimate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -96,8 +100,8 @@ ActiveRecord::Schema.define(version: 2019_08_21_152420) do
     t.string "name", null: false
     t.string "instrument"
     t.text "profile"
-    t.integer "avatar_image_id"
-    t.integer "background_image_id"
+    t.text "avatar_image_data"
+    t.text "background_image_data"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
