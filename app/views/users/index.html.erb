@@ -3,9 +3,13 @@
     <div class="col-md-3">絞り込み</div>
     <div class="col-md-9" >
       <% @users.reverse_each do |user| %>
-          <%= link_to user_path(user.id) do %>
+        <%= link_to user_path(user.id) do %>
+          <% if user.avatar_image_url.nil?%>
+            <%= image_tag "/assets/onerror.png", size: 150, class: "img-responsive" %>
+          <% elsif %>
             <%= image_tag user.avatar_image_url, size: 150, class: "img-responsive" %>
           <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>

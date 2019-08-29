@@ -1,0 +1,15 @@
+<h3 class="text-center mb-5", id="page_title">ポートフォリオを作成</h3>
+
+<div class="container">
+  <div class="form_edit">
+    <%= form_with(model: @portfolio, local: true) do |f| %>
+      <%= f.text_field :portfolio01, class: "form-control", placeholder: "YouTubeのURLを貼り付け"%>
+      <%= f.text_field :portfolio02, class: "form-control", placeholder: "YouTubeのURLを貼り付け"%>
+      <%= f.text_field :portfolio03, class: "form-control", placeholder: "YouTubeのURLを貼り付け"%>
+      <%= f.text_field :portfolio04, class: "form-control", placeholder: "YouTubeのURLを貼り付け"%>
+      <%= f.text_field :portfolio05, class: "form-control", placeholder: "YouTubeのURLを貼り付け"%>
+      <p class="text-center"><%= f.submit "ポートフォリオを作成", class: "btn btn-primary" %></p>
+    <% end %>
+  </div>
+    <%= link_to "プロフィールに戻る", user_path(current_user.id) %>
+</div>

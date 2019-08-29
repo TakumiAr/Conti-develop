@@ -4,7 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true #追記
+  validates :name, presence: true
   validates :profile, length: { maximum: 200 }
   include ImageUploader[:avatar_image]
+
+  has_many :services, dependent: :destroy
+  has_many :portfolios, dependent: :destroy
+  has_many :requests, dependent: :destroy
 end

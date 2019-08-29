@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'portfolios/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'products/index'
@@ -28,5 +29,6 @@ Rails.application.routes.draw do
   resources :requests
   resources :services
   resources :products
+  resources :portfolios
   get '/about', :to => "home#about"
 end

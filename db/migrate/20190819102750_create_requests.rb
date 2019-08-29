@@ -3,9 +3,13 @@ class CreateRequests < ActiveRecord::Migration[6.0]
     create_table :requests do |t|
       t.string :title
       t.text :content
-      t.string :image
+      t.string :image01
+      t.string :image02
+      t.string :video01
+      t.string :video02
       t.string :proposal_deadline
       t.string :budget_estimate
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

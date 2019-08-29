@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @services = @user.services
+    @portfolios = @user.portfolios
   end
 
   def edit

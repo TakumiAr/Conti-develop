@@ -1,14 +1,14 @@
 class RequestsController < ApplicationController
-  
+  before_action :set_request, only: [:show, :edit, :update, :destroy]
   def index
   end
   
   def new
-      @request = Request.new
+    @request = Request.new
   end
 
   def create
-    @request = Request.new(request_params)
+    @request = current_user.requests.build(request_params)
     if @request.save
       redirect_to user_path(current_user.id)
     else
@@ -16,19 +16,42 @@ class RequestsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @request.update(request_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
   def show
     @request = Request.find(params[:id])
   end
 
+  def destroy
+      @request.destroy
+      redirect_to root_path
+  end
+
   def made
+    @user = User.find_by(id: current_user.id)
+    @requests = @user.requests
   end
 
   def gets
+    @user = User.find_by(id: current_user.id)
   end
   
   private
 
   def request_params
     params.require(:request).permit(:title, :content)
+  end
+
+  def set_request
+    @request = Request.find(params[:id])
   end
 end

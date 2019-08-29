@@ -1,26 +1,28 @@
-<h1 class="text-center mb-5">マイページ編集フォーム</h1>
+<h3 class="text-center mb-5", id="profile_edit">プロフィールを編集</h3>
 <div class="container">
-
-<%= form_with(model: @user, local: true ) do |form| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @user.errors.count %>件のエラーがあります。 </h2>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="form_edit">
+  <%= form_with(model: @user, local: true ) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @user.errors.count %>件のエラーがあります。 </h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+      ユーザー名
+      <%= f.text_field :name, class: "form-control", autofocus: true, autocomplete: "name", placeholder: "ユーザー名を入力" %>
+      メールアドレス
+      <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力" %>
+      楽器
+      <%= f.text_field :instrument, class: "form-control", autofocus: true, autocomplete: "instrument", placeholder: "楽器を入力" %>
+      プロフィール
+      <%= f.text_area :profile, class: "form-control", autofocus: true, placeholder: "プロフィールを入力", rows: "3" %>
+      プロフィール画像<br>
+      <%= f.file_field :avatar_image %><br><br>
+      <p class="text-center"><%= f.submit class: "btn btn-primary" %></p>
   <% end %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-    <%= form.label :profile %>
-    <%= form.text_field :profile %>
-    <%= form.label :avatar_image %>
-    <%= form.file_field :avatar_image %>
-    <p><%= form.submit %></p>
-<% end %>
-
+  </div>
 </div>

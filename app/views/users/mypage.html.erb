@@ -1,8 +1,13 @@
 まいぺーじ
 かれんとゆーざもたせる。
-<%= link_to 'edit', edit_user_path(current_user.id), class: "nav-link" %>
+<%= link_to 'Edit profils', edit_user_path(current_user.id), class: "nav-link" %>
 <%= link_to 'profile', user_path(current_user.id), class: "nav-link" %>
 <%= link_to 'Made Recuests', requests_made_path, class: "nav-link" %>
 <%= link_to 'Gets Recuests', requests_gets_path, class: "nav-link" %>
 <%= link_to 'New Service', new_service_path, class: "nav-link" %>
 <%= link_to 'New Product', new_product_path, class: "nav-link" %>
+<% if current_user.portfolios.first.nil? %>
+    <%= link_to 'New Portfolio', new_portfolio_path, class: "nav-link" %>
+<% else%>
+    <%= link_to 'Edit Portfolio', edit_portfolio_path(current_user.portfolios.first.id), class: "nav-link" %>
+<% end %>
