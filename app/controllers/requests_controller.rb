@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
   
   def new
     @request = Request.new
+    @host_id = params[:host_id]
   end
 
   def create
@@ -43,12 +44,13 @@ class RequestsController < ApplicationController
 
   def gets
     @user = User.find_by(id: current_user.id)
+    @requests = Request.where(host_id: current_user.id)
   end
   
   private
 
   def request_params
-    params.require(:request).permit(:title, :content)
+    params.require(:request).permit(:title, :content, :host_id)
   end
 
   def set_request

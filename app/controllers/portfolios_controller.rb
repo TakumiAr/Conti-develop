@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio = current_user.portfolios.build(portfolio_params)
+    @portfolio = current_user.build_portfolio(portfolio_params)
     if @portfolio.save
       redirect_to user_path(current_user.id)
     else

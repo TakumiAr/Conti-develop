@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'gears/new'
   get 'portfolios/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'products/index'
   get 'products/show'
   root 'home#index'
+  get 'search', to: 'users#search'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -30,5 +32,6 @@ Rails.application.routes.draw do
   resources :services
   resources :products
   resources :portfolios
+  resources :gears
   get '/about', :to => "home#about"
 end

@@ -21,11 +21,14 @@ gem 'active_admin_flat_skin'
 gem 'font-awesome-sass'
 gem 'image_processing'
 gem 'shrine'
-gem 'scrollify'
+gem 'mini_magick'
+gem 'font-awesome-sass'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
+  gem 'rails-erd'
 end
 
 group :development do
@@ -35,6 +38,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "rails-erd"
   gem "foreman"
+  
 end
 
 group :test do

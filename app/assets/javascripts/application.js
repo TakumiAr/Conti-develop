@@ -17,5 +17,4 @@
 //= require jquery
 //= require popper
 //= require bootstrap-sprockets
-//= require scrollify
 //= require_tree ./main

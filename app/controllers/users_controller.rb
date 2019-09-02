@@ -1,13 +1,22 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   def index
-    @users = User.all
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
+  end
+
+  def search
+    @q = User.search(search_params)
+    @users = @q.result(distinct: true)
+    render 'index'
   end
 
   def show
     @user = User.find(params[:id])
     @services = @user.services
-    @portfolios = @user.portfolios
+    @portfolio = @user.portfolio
+    @products = @user.products
+    @gears = @user.gears
   end
 
   def edit
@@ -32,6 +41,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :profile, :avatar_image, :password, :password_confirmation)
+  end
+
+  def search_params
+    params.require(:q).permit(:name_cont)
   end
 
   def set_user

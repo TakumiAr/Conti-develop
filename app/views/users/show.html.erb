@@ -1,12 +1,10 @@
-<h3 class="text-center mb-5", id="page_title">プロフィール</h3>
-
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         <div class="col-md-8">
             <% if @user.avatar_image_url.nil?%>
-                <%= image_tag "/assets/onerror.png", size: 200, class: "rounded-circle" %>
+                <%= image_tag "/assets/onerror.png", size: 200, class: "img-circle" %>
             <% elsif %>
-                <%= image_tag @user.avatar_image_url, onerror: "/assets/onerror.png", size: 200, class: "rounded-circle" %>
+                <%= image_tag @user.avatar_image_url, onerror: "/assets/onerror.png", height: 200, class: "rounded-circle" %>
             <% end %>
             名前: <%= @user.name%>
             <br><br>
@@ -18,7 +16,7 @@
                 <a href="#photo2" class="nav-link" data-toggle="tab">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                <a href="#photo3" class="nav-link" data-toggle="tab">Event</a>
+                <a href="#photo3" class="nav-link" data-toggle="tab">Gear</a>
                 </li>
                 <li class="nav-item">
                 <a href="#photo4" class="nav-link" data-toggle="tab">Product</a>
@@ -28,58 +26,69 @@
             <div class="tab-content">
                 <div id="photo1" class="tab-pane active">
                     <%= @user.profile%><br>
-                    <%= link_to 'Top', root_path %>
                 </div>
                 <div id="photo2" class="tab-pane">
-                    <% if @user.portfolios.present? %>
-                        <% if @user.portfolios.first.portfolio01.blank? %>
+                    <% if @user.portfolio.present? %>
+                        <% if @user.portfolio.portfolio01.blank? %>
                         <% else %>
-                            <%= raw(youtube_embed(@user.portfolios.first.portfolio01)) %>
+                            <%= raw(youtube_embed(@user.portfolio.portfolio01)) %>
                         <% end %>
-                        <% if @user.portfolios.first.portfolio02.blank? %>
+                        <% if @user.portfolio.portfolio02.blank? %>
                         <% else %>
-                            <%= raw(youtube_embed(@user.portfolios.first.portfolio02)) %>
+                            <%= raw(youtube_embed(@user.portfolio.portfolio02)) %>
                         <% end %>
-                        <% if @user.portfolios.first.portfolio03.blank? %>
+                        <% if @user.portfolio.portfolio03.blank? %>
                         <% else %>
-                            <%= raw(youtube_embed(@user.portfolios.first.portfolio03)) %>
+                            <%= raw(youtube_embed(@user.portfolio.portfolio03)) %>
                         <% end %>
-                        <% if @user.portfolios.first.portfolio04.blank? %>
+                        <% if @user.portfolio.portfolio04.blank? %>
                         <% else %>
-                            <%= raw(youtube_embed(@user.portfolios.first.portfolio04)) %>
+                            <%= raw(youtube_embed(@user.portfolio.portfolio04)) %>
                         <% end %>
-                        <% if @user.portfolios.first.portfolio05.blank? %>
+                        <% if @user.portfolio.portfolio05.blank? %>
                         <% else %>
-                            <%= raw(youtube_embed(@user.portfolios.first.portfolio05)) %>
+                            <%= raw(youtube_embed(@user.portfolio.portfolio05)) %>
                         <% end %>
                     <% else%>
-                    <br>
-                    ポートフォリオはありません。
                     <% end%>
                 </div>
                 <div id="photo3" class="tab-pane">
-                    wwwwwwwwwwwwwwwwwww
+                    <% @gears.each do |gear|%>
+                    <div class="text-center">
+                        <p><strong><%= gear.name %></strong></p>
+                        <% if gear.image_url.blank?%>
+                        <% else %>
+                            <%= image_tag gear.image_url, width: 640, class: "img-responsive" %>
+                        <% end %>
+                    </div>
+                    <% end %>
                 </div>
                 <div id="photo4" class="tab-pane">
-                okookg
+                    <% @products.each do |product|%>
+                    <div class="text-center">
+                        <p><strong><%= product.title %></strong></p>
+                        <%= product.explanation%>
+                        <% if product.video.blank? %>
+                        <% else %>
+                            <%= raw(youtube_embed(product.video)) %>
+                        <% end %>
+                    </div>
+                    <% end %>
                 </div>
             </div>
         </div>
         <div class="col-md-4" >
-            <%= link_to 'Recuest', new_request_path(@user.id) %><br>
-            <% @services.each do |service| %>
-                <%= link_to "test", service_path(service.id) %>
+            <% if user_signed_in? %>
+                <p class="text-center mt-5"><%= link_to 'リクエストを送ってみる', new_request_path(host_id: @user.id), class: "btn btn-success btn-block" %></p>
+            <% else %>
+                <p class="text-center mt-5"><%= link_to 'リクエストを送ってみる', new_user_session_path, class: "btn btn-success btn-block" %></p>
             <% end %>
-            <div class="card" style="max-width: 25rem;">
-                <!-- カード本文：card-body -->
-                <div class="card-body">
-                <!-- カード見出し：card-title -->
-                <h4 class="card-title">@service.title</h4>
-                <!-- カードの内容文：card-text -->
-                <p class="card-text">カードの内容文が入awffafawfeafawefwfwります。</p>
-                <a href="#" class="btn btn-primary">ボタン</a>
-                </div>
-            </div>
+            <p class="text-center mt-5">このようなリクエストに応えます。</p>
+            <% @user.services.each do |service| %>
+                <p class="text-center top_service_top"><%= service.title %></p>
+                <%= service.content%>
+                <br>
+            <% end %>
         </div>
     </div>
 </div>

@@ -5,9 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag "application" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -18,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="Navber">
+      <div class="collapse navbar-collapse ml-5" id="Navber">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <%= link_to 'About', about_path, class: "nav-link" %>
@@ -44,17 +44,6 @@
               <%= link_to 'Log in', new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Menu 
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to '', new_user_registration_path, class: "dropdown-item" %>
-              <%= link_to '', new_user_session_path, class: "dropdown-item" %>
-              <div class="dropdown-divider"></div>
-              <%= link_to '', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input type="search" class="form-control mr-sm-2" placeholder="検索..." aria-label="検索...">

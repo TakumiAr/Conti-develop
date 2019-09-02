@@ -7,9 +7,9 @@ class ProductsController < ApplicationController
 end
 
 def create
-  @product = Product.new(product_params)
+  @product = current_user.products.build(product_params)
   if @product.save
-    redirect_to product_path(@product.id)
+    redirect_to user_path(current_user.id)
   else
     render 'new'
   end
@@ -22,6 +22,6 @@ end
   private
 
   def product_params
-    params.require(:product).permit(:title, :content)
+    params.require(:product).permit(:title, :explanation, :image, :video)
   end
 end

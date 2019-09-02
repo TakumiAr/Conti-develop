@@ -1,26 +1,48 @@
-<h3 class="text-center mb-5", id="form_edit">ログイン</h3>
-<div class="container">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレスを入力" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワードを入力" %>
-    </div>
-
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end %>
-
-    <div class="actions text-center">
-      <%= f.submit "Log in", class: "btn btn-primary" %><br>
-        <%= render "users/shared/links" %>
-    </div>
-  <% end %>
+<div class="login_page">
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<h3>Sign in</h3>
+					<div class="d-flex justify-content-end social_icon">
+						<span><i class="fab fa-facebook-square"></i></span>
+						<span><i class="fab fa-google-plus-square"></i></span>
+						<span><i class="fab fa-twitter-square"></i></span>
+					</div>
+				</div>
+				<div class="card-body">
+					<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+							</div>
+							<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレスを入力" %>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワードを入力" %>
+						</div>
+						<div class="row align-items-center remember">
+							<% if devise_mapping.rememberable? %>
+							<div class="field">
+								<%= f.check_box :remember_me %>
+								<%= f.label :remember_me %>
+							</div>
+							<% end %>
+						</div>
+						<div class="form-group">
+							<%= f.submit "Log in", class: "btn float-right login_btn" %>
+						</div>
+					<% end %>
+				</div>
+				<div class="card-footer">
+					<div class="actions text-center">
+						<%= render "users/shared/links" %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -1,3 +1,4 @@
+<h3 class="text-center mb-5", id="page_title">自分の活動を記録する</h3>
 <div class="container">
   <%= form_with(model: @product, local: true ) do |form| %>
     <% if @product.errors.any? %>
@@ -17,10 +18,17 @@
       <%= form.text_field :title %>
     </div>
     <div class="product_title">
-      <%= form.label :content %>
-      <%= form.rich_text_area :content %>
+      <%= form.label :explanation %>
+      <%= form.rich_text_area :explanation %>
     </div>
-    <%= form.submit %>
+    <div class="product_title">
+      <%= form.label :video %>
+      <%= form.text_field :video %>
+    </div>
+    <div class="product_title">
+    <br><br>
+      <p class="text-center"><%= form.submit "自分の活動を記録", class: "btn btn-primary" %></p>
+    </div>
     
   <% end %>
   <%= link_to "プロフィールに戻る", user_path(current_user.id) %>

@@ -19,7 +19,7 @@
       楽器
       <%= f.text_field :instrument, class: "form-control", autofocus: true, autocomplete: "instrument", placeholder: "楽器を入力" %>
       プロフィール
-      <%= f.text_area :profile, class: "form-control", autofocus: true, placeholder: "プロフィールを入力", rows: "3" %>
+      <%= f.rich_text_area :profile, placeholder: "プロフィールを入力" %>
       プロフィール画像<br>
       <%= f.file_field :avatar_image %><br><br>
       <p class="text-center"><%= f.submit class: "btn btn-primary" %></p>

@@ -1,14 +1,30 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">絞り込み</div>
+  <div class="row mt-3">
+    <div class="col-md-3">
+      <%= render "search_form"%>
+    </div>
     <div class="col-md-9" >
       <% @users.reverse_each do |user| %>
-        <%= link_to user_path(user.id) do %>
           <% if user.avatar_image_url.nil?%>
-            <%= image_tag "/assets/onerror.png", size: 150, class: "img-responsive" %>
+            <%= link_to user_path(user.id) do %>
+              <%= image_tag "/assets/onerror.png", size: 150, class: "img-responsive" %>
+            <% end %>
           <% elsif %>
-            <%= image_tag user.avatar_image_url, size: 150, class: "img-responsive" %>
-          <% end %>
+            <%= link_to user_path(user.id) do %>
+            <div class="card" style="max-width: 18rem;">
+              <!-- カード上部にレイアウトされる画像：card-img-top -->
+              <%= image_tag user.avatar_image_url, size: 150, class: "card-img-top h-100" %>
+              <!-- カード本文：card-body -->
+              <div class="card-body">
+                <!-- カード見出し：card-title -->
+                <%= user.name  %>
+            <% end %>
+                <!-- カードの内容文：card-text -->
+                <p class="">カードの内容文が入ります。</p>
+              </div>
+              <div class="small_youtube">
+                <%= raw(youtube_embed_small(user.portfolio.portfolio01))  %>
+            </div>
         <% end %>
       <% end %>
     </div>

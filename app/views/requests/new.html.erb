@@ -5,7 +5,9 @@
     <%= form_with(model: @request, local: true) do |f| %>
       <%= f.text_field :title, class: "form-control", placeholder: "リクエストのタイトルを入力"%>
       <%= f.text_area :content, class: "form-control", rows: "3", placeholder: "リクエストの内容を入力" %>
-      <%= f.file_field :image %><br><br>
+      <%= f.text_field :proposal_deadline, class: "form-control", placeholder: "提案期限を入力"%>
+      <%= f.text_field :budget_estimate, class: "form-control", placeholder: "予算目安を入力"%>
+      <%= f.hidden_field :host_id, value: @host_id %><br>
       <p class="text-center"><%= f.submit "リクエストを作成", class: "btn btn-primary" %></p>
     <% end %>
   </div>

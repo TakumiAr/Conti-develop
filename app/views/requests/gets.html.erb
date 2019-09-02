@@ -1,1 +1,6 @@
-<%= @user.requests.title %>
+<% @requests.each do |request| %>
+    <%= link_to request.title, request_path(request.id) %>
+    <%= link_to "編集する", edit_request_path(request.id) %>
+    <%= link_to "削除する", request_path(request.id), method: :delete %>
+    <br><br>
+<% end%>
