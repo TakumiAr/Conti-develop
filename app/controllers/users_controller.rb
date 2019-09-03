@@ -44,7 +44,10 @@ class UsersController < ApplicationController
   end
 
   def search_params
-    params.require(:q).permit(:name_cont)
+    params.require(:q).permit(
+      :name_cont,
+      :portfolio_portfolio01_cont
+      )
   end
 
   def set_user

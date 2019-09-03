@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-video#bgvid {
+body video.bgvid {
     position: fixed; right: 0; bottom: 0;
     min-width: 100%; min-height: 100%;
     width: 100%; height: auto; z-index: -100;
@@ -28,5 +28,13 @@ video#bgvid {
 }
 
 .small_youtube {
-    // border: 1px solid rgba(0, 0, 0, 0.125);
+
+}
+
+.card-body-white {
+    background-color: white;
+}
+
+.card {
+    border-radius: 0rem;
 }

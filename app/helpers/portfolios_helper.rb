@@ -20,6 +20,6 @@ module PortfoliosHelper
             youtube_id = $5
         end
         
-        %Q{<iframe title="YouTube video player" width="287" height="174.28125" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+        %Q{<iframe title="YouTube video player" width="288" height="174.28125" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
     end
 end

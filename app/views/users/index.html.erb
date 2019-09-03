@@ -5,27 +5,22 @@
     </div>
     <div class="col-md-9" >
       <% @users.reverse_each do |user| %>
-          <% if user.avatar_image_url.nil?%>
-            <%= link_to user_path(user.id) do %>
-              <%= image_tag "/assets/onerror.png", size: 150, class: "img-responsive" %>
-            <% end %>
-          <% elsif %>
-            <%= link_to user_path(user.id) do %>
+        <% if user.avatar_image_url.nil?%>
+          <%= link_to user_path(user.id) do %>
+            <%= image_tag "/assets/onerror.png", size: 150, class: "img-responsive" %>
+          <% end %>
+        <% elsif %>
+          <%= link_to user_path(user.id) do %>
             <div class="card" style="max-width: 18rem;">
-              <!-- カード上部にレイアウトされる画像：card-img-top -->
               <%= image_tag user.avatar_image_url, size: 150, class: "card-img-top h-100" %>
-              <!-- カード本文：card-body -->
-              <div class="card-body">
-                <!-- カード見出し：card-title -->
+              <div class="card-body card-body-white">
                 <%= user.name  %>
-            <% end %>
-                <!-- カードの内容文：card-text -->
-                <p class="">カードの内容文が入ります。</p>
+          <% end %>
+                <%= user.profile%>
               </div>
-              <div class="small_youtube">
-                <%= raw(youtube_embed_small(user.portfolio.portfolio01))  %>
             </div>
         <% end %>
+        <%= raw(youtube_embed_small("https://www.youtube.com/watch?v=3dEqlceh_ms&list=RD3dEqlceh_ms&start_radio=1&loop=0")) %>
       <% end %>
     </div>
   </div>
