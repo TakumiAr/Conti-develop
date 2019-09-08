@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 // import "bootstrap-honoka/dist/css/bootstrap.min.css"
 import "bootstrap-honoka/dist/js/bootstrap.min.js"
+import 'stylesheets/application'
 
 require("@rails/ujs").start()
 require("turbolinks").start()
