@@ -1,0 +1,63 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body video.bgvid {
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: 100%; height: auto; z-index: -100;
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.modal-body .field{
+    margin-bottom: 20px;
+}
+
+.form_edit{
+    margin-bottom: 20px;
+}
+
+#form_edit {
+    margin-top: 20px;
+}
+
+#page_title {
+    margin-top: 20px;
+}
+
+.youtube_small {
+}
+
+.card-body-gray {
+    background-color: #6B757D;
+    height: 400px;
+    opacity: 0.8;
+}
+
+.card-img-top {
+    object-fit: cover;
+    border-radius: 0px;
+}
+
+.card#index {
+    border-radius: 0rem;
+    margin-top: 0;
+    // width: 298px;
+    height: 480px;
+    width:100%;
+    max-width: 100%;
+    background-color: white;
+}
+
+.additional_explanation {
+    font-size: 15px;
+}
+
+#users_top {
+    background-image: url(/assets/musician2.jpg);
+    }
+
+.users_search {
+}
