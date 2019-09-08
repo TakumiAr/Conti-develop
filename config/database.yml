@@ -80,6 +80,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: Conti_develop_production
   username: Conti_develop
   password: <%= ENV['CONTI_DEVELOP_DATABASE_PASSWORD'] %>
