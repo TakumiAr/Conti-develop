@@ -35,7 +35,6 @@ Rails.application.routes.draw do
   resources :services
 
   get 'products/search', to: 'products#search'
-  get "products/aaa", to: "products#aaa"
   resources :products
   resources :portfolios
   resources :gears

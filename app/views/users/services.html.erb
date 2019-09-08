@@ -1,20 +1,22 @@
-<h1>サービス一覧</h1>
+<h3 class="text-center mb-5", id="page_title">サービス一覧</h3>
 
-<p><%= notice %></p>
-
-<table>
-    <tr>
-        <th>タイトル</th>
-        <th>内容</th>
-    </tr>
-
-    <% @services.each do |service| %>
-    <tr>
-        <td><%= service.title %></td>
-        <td><%= service.content %></td>
-        <td><%= link_to '詳細を確認する', service_path(service.id) %></td>
-        <td><%= link_to "サービスを編集する", edit_service_path(service.id), data: { confirm: '本当に編集していいですか？' } %></td>
-        <td><%= link_to 'を削除する', service_path(service.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-    </tr>
-    <% end %>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>タイトル</th>
+                    <th>
+                </tr>
+                </thead>
+                    <% @services.each do |service| %>
+                    <tr>
+                        <td><%= service.title %></td>
+                        <td><%= link_to '詳細', service_path(service.id) %> / <%= link_to "編集", edit_service_path(service.id) %> / <%= link_to '削除', service_path(service.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+                    </tr>
+                    <% end %>
+            </table>
+        </div>
+    </div>
+</div>

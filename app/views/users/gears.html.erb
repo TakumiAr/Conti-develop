@@ -1,20 +1,22 @@
-<h1>機材一覧</h1>
+<h3 class="text-center mb-5", id="page_title">機材一覧</h3>
 
-<p><%= notice %></p>
-
-<table>
-    <tr>
-        <th>タイトル</th>
-        <th>内容</th>
-    </tr>
-
-    <% @gears.each do |gear| %>
-    <tr>
-        <td><%= gear.title %></td>
-        <td><%= gear.content %></td>
-        <td><%= link_to '詳細を確認する', gear_path(gear.id) %></td>
-        <td><%= link_to "機材を編集する", edit_gear_path(gear.id), data: { confirm: '本当に編集していいですか？' } %></td>
-        <td><%= link_to 'を削除する', gear_path(gear.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-    </tr>
-    <% end %>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>機材の名前</th>
+                    <th>
+                </tr>
+                </thead>
+                    <% @gears.each do |gear| %>
+                    <tr>
+                        <td><%= gear.name %></td>
+                        <td><%= link_to '詳細', gear_path(gear.id) %> / <%= link_to "編集", edit_gear_path(gear.id) %> / <%= link_to '削除', gear_path(gear.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+                    </tr>
+                    <% end %>
+            </table>
+        </div>
+    </div>
+</div>

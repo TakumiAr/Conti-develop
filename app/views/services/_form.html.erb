@@ -1,14 +1,23 @@
-<h3 class="text-center mb-5", id="page_title">サービスを作成</h3>
-
 <div class="container">
-  <div class="form_edit">
-    <%= form_with(model: @service, local: true) do |f| %>
-      <%= f.text_field :title, class: "form-control", placeholder: "サービスのタイトルを入力"%>
-      <%= f.rich_text_area :content, placeholder: "サービスの内容を入力"%>
-      <%= f.select :service_category, ["作曲", "作詞", "歌入れ", "ミキシング/マスタリング", "ミキシング/マスタリング（ボーカル補正）", "BGM・SE", "音声編集", "相談", "レッスン", "出演"], {}, class: 'form-control' %>
-      <%= f.file_field :image %><br><br>
-      <p class="text-center"><%= f.submit "サービスを作成", class: "btn btn-primary" %></p>
-    <% end %>
+  <div class="row">
+    <div class="form_edit">
+      <%= form_with(model: @service, local: true) do |f| %>
+        <div class="col-sm-10">
+          <label class="control-label">サービスのタイトル</label>
+          <%= f.text_field :title, class: "form-control", placeholder: "サービスのタイトルを入力"%>
+        </div>
+        <div class="col-sm-12">
+          <label class="control-label">サービスの内容</label>
+          <%= f.rich_text_area :content, placeholder: "サービスの内容を入力"%>
+        </div>
+        <br>
+        <div class="col-sm-8">
+          <label class="control-label">カテゴリの選択</label>
+          <%= f.select :service_category, ["作曲", "作詞", "歌入れ", "ミキシング/マスタリング", "ミキシング/マスタリング（ボーカル補正）", "BGM・SE", "音声編集", "相談", "レッスン", "出張", "その他"], {}, class: 'form-control' %>
+        </div>
+        <br>
+        <p class="text-center"><%= f.submit "サービスを作成", class: "btn btn-warning" %></p>
+      <% end %>
+    </div>
   </div>
-    <%= link_to "プロフィールに戻る", user_path(current_user.id) %>
 </div>

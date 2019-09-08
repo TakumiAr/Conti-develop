@@ -1,15 +1,3 @@
-<h3 class="text-center mb-5", id="page_title">リクエストを作成</h3>
+<h3 class="text-center mb-5", id="page_title">リクエストを登録</h3>
 
-<div class="container">
-  <div class="form_edit">
-    <%= form_with(model: @request, local: true) do |f| %>
-      <%= f.text_field :title, class: "form-control", placeholder: "リクエストのタイトルを入力"%>
-      <%= f.text_area :content, class: "form-control", rows: "3", placeholder: "リクエストの内容を入力" %>
-      <%= f.text_field :proposal_deadline, class: "form-control", placeholder: "提案期限を入力"%>
-      <%= f.text_field :budget_estimate, class: "form-control", placeholder: "予算目安を入力"%>
-      <%= f.hidden_field :host_id, value: @host_id %><br>
-      <p class="text-center"><%= f.submit "リクエストを作成", class: "btn btn-primary" %></p>
-    <% end %>
-  </div>
-    <%= link_to "プロフィールに戻る", user_path(current_user.id) %>
-</div>
+<%= render 'form' %>

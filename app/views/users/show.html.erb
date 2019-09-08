@@ -88,7 +88,7 @@
             <% end %>
             <p class="text-center mt-5">このようなリクエストに応えます。</p>
             <% @user.services.each do |service| %>
-                <p class="text-center top_service_top"><%= service.title %></p>
+                <p class="text-center service_top"><%= service.title %></p>
                 <%= service.content%>
                 <br>
             <% end %>

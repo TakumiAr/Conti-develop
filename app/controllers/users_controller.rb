@@ -42,6 +42,11 @@ class UsersController < ApplicationController
     @services = @user.services
   end
 
+  def gears
+    @user = User.find(params[:user_id])
+    @gears = @user.gears
+  end
+
 
   private
 
