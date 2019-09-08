@@ -86,7 +86,8 @@ class ProductsController < ApplicationController
   def search_params
     params.require(:q).permit(
       :title_cont,
-      :song_title_cont
+      :song_title_cont,
+      :content_cont
       )
   end
 
