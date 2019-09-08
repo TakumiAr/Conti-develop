@@ -1,4 +1,5 @@
 <div class="users_search">
+    <h4 class="text-center text-warning">ユーザーを</h4>
     <h4 class="text-center mb-5 text-warning">条件で絞り込む</h4>
     <%= search_form_for(@q, url: users_search_path) do |f| %>
         <%= f.search_field :name_cont, class: "form-control", placeholder: "ユーザー名で検索"%><br>

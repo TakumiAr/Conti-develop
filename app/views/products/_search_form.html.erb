@@ -1,4 +1,5 @@
-<h4 class="text-center mb-5">条件で絞り込む</h4>
+<h4 class="text-center text-dark">知りたい情報を</h4>
+<h4 class="text-center mb-5 text-dark">条件で絞り込む</h4>
 <%= search_form_for(@q, url: products_search_path) do |f| %>
     <%= f.search_field :song_title_cont, class: "form-control", placeholder: "曲名で検索"%><br>
     <%= f.search_field :explanation_cont, class: "form-control" %><br>

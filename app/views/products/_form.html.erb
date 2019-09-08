@@ -3,21 +3,21 @@
   <div class="row">
     <div class="form_edit">
       <%= form_with(model: @product, local: true ) do |f| %>
+        <div class="col-sm-12">
+          <label class="control-label">タイトル</label>
+          <%= f.text_field :title, class: "form-control", placeholder: "メモタイトルを入力"  %>
+        </div>
+        <div class="col-sm-12">
+          <label class="control-label">内容</label>
+          <%= f.rich_text_area :content, placeholder: "内容を入力" %>
+        </div>
         <div class="col-sm-6">
           <label class="control-label">曲名</label>
           <%= f.text_field :song_title, class: "form-control", placeholder: "曲名を入力"  %>
         </div>
-        <div class="col-sm-12">
-          <label class="control-label">メモタイトル</label>
-          <%= f.text_field :title, class: "form-control", placeholder: "メモタイトルを入力"  %>
-        </div>
         <div class="col-sm-6">
           <label class="control-label">楽器</label>
           <%= f.text_field :instrument, class: "form-control", placeholder: "楽器を入力"  %>
-        </div>
-        <div class="col-sm-12">
-          <label class="control-label">内容</label>
-          <%= f.rich_text_area :explanation, placeholder: "内容を入力" %>
         </div>
         <br>
         <div class="col-sm-12">

@@ -4,9 +4,9 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :song_title
       t.string :title
       t.string :instrument
-      t.float :score
-      t.text :explanation
+      t.text :content
       t.string :video
+      t.text :video_explanation
       t.references :user, foreign_key: true
 
       t.timestamps

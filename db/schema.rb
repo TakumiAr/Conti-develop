@@ -103,9 +103,9 @@ ActiveRecord::Schema.define(version: 2019_08_30_102751) do
     t.string "song_title"
     t.string "title"
     t.string "instrument"
-    t.float "score"
-    t.text "explanation"
+    t.text "content"
     t.string "video"
+    t.text "video_explanation"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -118,7 +118,6 @@ ActiveRecord::Schema.define(version: 2019_08_30_102751) do
     t.string "image01"
     t.string "image02"
     t.string "video01"
-    t.string "video02"
     t.string "proposal_deadline"
     t.string "budget_estimate"
     t.integer "host_id"
@@ -130,10 +129,8 @@ ActiveRecord::Schema.define(version: 2019_08_30_102751) do
 
   create_table "services", force: :cascade do |t|
     t.string "title"
-    t.text "additional_explanation"
     t.text "content"
     t.string "service_category"
-    t.text "image"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -149,6 +146,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_102751) do
     t.string "additional_explanation"
     t.text "avatar_image_data"
     t.text "video"
+    t.text "video_explanation"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

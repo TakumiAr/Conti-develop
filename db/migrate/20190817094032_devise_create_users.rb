@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :additional_explanation
       t.text :avatar_image_data
       t.text :video
+      t.text :video_explanation
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

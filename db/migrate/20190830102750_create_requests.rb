@@ -6,7 +6,6 @@ class CreateRequests < ActiveRecord::Migration[6.0]
       t.string :image01
       t.string :image02
       t.string :video01
-      t.string :video02
       t.string :proposal_deadline
       t.string :budget_estimate
       t.integer :host_id
