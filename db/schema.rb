@@ -100,10 +100,12 @@ ActiveRecord::Schema.define(version: 2019_08_30_102751) do
   end
 
   create_table "products", force: :cascade do |t|
+    t.string "song_title"
     t.string "title"
+    t.string "instrument"
+    t.float "score"
     t.text "explanation"
     t.string "video"
-    t.string "image_data"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -141,9 +143,12 @@ ActiveRecord::Schema.define(version: 2019_08_30_102751) do
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "instrument"
+    t.string "has_been"
+    t.string "sex"
     t.text "profile"
+    t.string "additional_explanation"
     t.text "avatar_image_data"
-    t.text "background_image_data"
+    t.text "video"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

@@ -1,1 +1,35 @@
-誰かが作成した商品を見ることができる。
+<div class="site-wrapper" id="products_top">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-3">
+        <%= render "search_form"%>
+      </div>
+      <div class="col-md-9" >
+      <div class="card-deck">
+        <% @products.reverse_each do |product| %>
+          <%= link_to product_path(product.id) do %>
+            <div class="col-sm-4">
+              <div class="card" id="index">
+              <% if product.user.avatar_image_url.nil?%>
+                <%= image_tag "/assets/onerror2.png", size:150, class: "card-img-top" %>
+              <% else %>
+                <%= image_tag product.user.avatar_image_url, size: 150, class: "card-img-top" %>
+              <% end %>
+          <% end %>
+                <div class="card-body card-body-gray">
+                  <p>曲名: <%= link_to product.song_title, product_path(product.id) %></p>
+                  <div class="additional_explanation"><%= product.title%></div>
+                  <div class="additional_explanation"><%= product.instrument%></div>
+                </div>
+                <% if product.video.blank? %>
+                <% else %>
+                  <%= raw(youtube_embed_free(product.video)) %>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

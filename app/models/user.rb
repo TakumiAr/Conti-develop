@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+  validates :additional_explanation, length: { maximum: 75 }
+
   include ImageUploader[:avatar_image]
 
   has_many :services, dependent: :destroy

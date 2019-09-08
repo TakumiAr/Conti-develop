@@ -5,9 +5,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       t.string :name, null: false
       t.string :instrument
+      t.string :has_been
+      t.string :sex
       t.text :profile
+      t.string :additional_explanation
       t.text :avatar_image_data
-      t.text :background_image_data
+      t.text :video
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

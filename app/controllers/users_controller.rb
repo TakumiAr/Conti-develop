@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   def index
-    @q = User.ransack(params[:q])
+    @q = User.includes(:gears).ransack(params[:q])
     @users = @q.result(distinct: true)
   end
 
@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @services = @user.services
     @portfolio = @user.portfolio
     @products = @user.products
@@ -34,19 +33,38 @@ class UsersController < ApplicationController
   end
 
   def products
+    @user = User.find(params[:user_id])
+    @products = @user.products
+  end
+
+  def services
+    @user = User.find(params[:user_id])
+    @services = @user.services
   end
 
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :profile, :avatar_image, :password, :password_confirmation)
+    params.require(:user).permit(
+      :name,
+      :email,
+      :profile, 
+      :avatar_image, 
+      :video,
+      :instrument,
+      :has_been,
+      :additional_explanation,
+      :password,
+      :password_confirmation
+      )
   end
 
   def search_params
     params.require(:q).permit(
       :name_cont,
-      :portfolio_portfolio01_cont
+      :additional_explanation_cont,
+      :gears_name_cont
       )
   end
 

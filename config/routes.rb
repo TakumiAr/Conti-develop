@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'gears/new'
-  get 'portfolios/show'
+
+  root 'home#index'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get 'products/index'
-  get 'products/show'
-  root 'home#index'
-  get 'search', to: 'users#search'
+
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'   
@@ -20,8 +18,13 @@ Rails.application.routes.draw do
   end
 
   get "users/mypage", to: "users#mypage"
+  get 'users/search', to: 'users#search'
+  get 'users/products', to: 'users#product'
+
   resources :users do
     get "products", to: "users#products"
+    get "services", to: "users#services"
+    get "gears", to: "users#gears"
   end
 
   resources :users
@@ -30,8 +33,12 @@ Rails.application.routes.draw do
   get "requests/gets", to: "requests#gets"
   resources :requests
   resources :services
+
+  get 'products/search', to: 'products#search'
+  get "products/aaa", to: "products#aaa"
   resources :products
   resources :portfolios
   resources :gears
   get '/about', :to => "home#about"
+
 end

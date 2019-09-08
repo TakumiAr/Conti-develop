@@ -55,18 +55,18 @@
                 <div id="photo3" class="tab-pane">
                     <% @gears.each do |gear|%>
                     <div class="text-center">
-                        <p><strong><%= gear.name %></strong></p>
                         <% if gear.image_url.blank?%>
                         <% else %>
-                            <%= image_tag gear.image_url, width: 640, class: "img-responsive" %>
+                            <%= image_tag gear.image_url,height: 260, class: "img-responsive" %>
                         <% end %>
+                        <p><strong><%= gear.name %></strong></p>
                     </div>
                     <% end %>
                 </div>
                 <div id="photo4" class="tab-pane">
                     <% @products.each do |product|%>
                     <div class="text-center">
-                        <p><strong><%= product.title %></strong></p>
+                        <p><strong><%= product.song_title %></strong></p>
                         <%= product.explanation%>
                         <% if product.video.blank? %>
                         <% else %>
@@ -79,9 +79,12 @@
         </div>
         <div class="col-md-4" >
             <% if user_signed_in? %>
-                <p class="text-center mt-5"><%= link_to 'リクエストを送ってみる', new_request_path(host_id: @user.id), class: "btn btn-success btn-block" %></p>
+                <% if @user.id == current_user.id %> 
+                <% else%>
+                    <p class="text-center mt-5"><%= link_to 'リクエストを送ってみる', new_request_path(host_id: @user.id), class: "btn btn-warning btn-block" %></p>
+                <% end %>
             <% else %>
-                <p class="text-center mt-5"><%= link_to 'リクエストを送ってみる', new_user_session_path, class: "btn btn-success btn-block" %></p>
+                <p class="text-center mt-5"><%= link_to 'リクエストを送ってみる', new_user_session_path, class: "btn btn-warning btn-block" %></p>
             <% end %>
             <p class="text-center mt-5">このようなリクエストに応えます。</p>
             <% @user.services.each do |service| %>

@@ -27,14 +27,37 @@ body video.bgvid {
     margin-top: 20px;
 }
 
-.small_youtube {
-
+.youtube_small {
 }
 
-.card-body-white {
+.card-body-gray {
+    background-color: #6B757D;
+    height: 400px;
+    opacity: 0.8;
+}
+
+.card-img-top {
+    object-fit: cover;
+    border-radius: 0px;
+}
+
+.card#index {
+    border-radius: 0rem;
+    margin-top: 0;
+    // width: 298px;
+    height: 480px;
+    width:100%;
+    max-width: 100%;
     background-color: white;
 }
 
-.card {
-    border-radius: 0rem;
+.additional_explanation {
+    font-size: 15px;
+}
+
+#users_top {
+    background-image: url(/assets/musician2.jpg);
+    }
+
+.users_search {
 }

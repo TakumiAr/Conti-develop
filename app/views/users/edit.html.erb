@@ -18,10 +18,23 @@
       <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力" %>
       楽器
       <%= f.text_field :instrument, class: "form-control", autofocus: true, autocomplete: "instrument", placeholder: "楽器を入力" %>
+      歴（年）
+      <%= f.text_field :has_been, class: "form-control", autofocus: true, autocomplete: "has_been", placeholder: "楽器歴を入力" %>
       プロフィール
       <%= f.rich_text_area :profile, placeholder: "プロフィールを入力" %>
+      プロフィール（補足説明）
+      <%= f.text_area :additional_explanation, class: "form-control", autofocus: true, placeholder: "プロフィールの補足説明を入力", row: "3" %>
+      性別
+      <div class="checkbox">
+        <label><%= f.radio_button :sex, "男" %> 男  </label>
+      </div>
+      <div class="checkbox">
+        <label><%= f.radio_button :sex, "女" %> 女 </label>
+      </div>
+      動画
+      <%= f.text_field :video, class: "form-control", placeholder: "YouTubeの動画を登録" %>
       プロフィール画像<br>
-      <%= f.file_field :avatar_image %><br><br>
+      <%= f.file_field :avatar_image, class: "js-file-upload"%><br><br>
       <p class="text-center"><%= f.submit class: "btn btn-primary" %></p>
   <% end %>
   </div>
