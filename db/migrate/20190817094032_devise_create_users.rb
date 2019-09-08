@@ -8,6 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :has_been
       t.string :sex
       t.text :profile
+      t.text :profile_text
       t.string :additional_explanation
       t.text :avatar_image_data
       t.text :video

@@ -23,6 +23,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      @user.profile_text = @user.profile.body.to_plain_text
+      @user.update(user_params)
       redirect_to users_mypage_path
     else
       render 'edit'
@@ -68,7 +70,7 @@ class UsersController < ApplicationController
   def search_params
     params.require(:q).permit(
       :name_cont,
-      :additional_explanation_cont,
+      :additional_explanation_or_profile_text_cont,
       :gears_name_cont
       )
   end

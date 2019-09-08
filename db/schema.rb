@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_102751) do
     t.string "has_been"
     t.string "sex"
     t.text "profile"
+    t.text "profile_text"
     t.string "additional_explanation"
     t.text "avatar_image_data"
     t.text "video"
