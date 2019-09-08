@@ -1,6 +1,22 @@
-<% @requests.each do |request| %>
-    <%= link_to request.title, request_path(request.id) %>
-    <%= link_to "編集する", edit_request_path(request.id) %>
-    <%= link_to "削除する", request_path(request.id), method: :delete %>
-    <br><br>
-<% end%>
+<h3 class="text-center mb-5", id="page_title">作成したリクエスト一覧</h3>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>タイトル</th>
+                    <th>
+                </tr>
+                </thead>
+                    <% @requests.each do |request| %>
+                    <tr>
+                        <td><%= request.title %></td>
+                        <td><%= link_to '詳細', request_path(request.id) %> / <%= link_to "編集", edit_request_path(request.id) %> / <%= link_to '削除', request_path(request.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+                    </tr>
+                    <% end %>
+            </table>
+        </div>
+    </div>
+</div>
