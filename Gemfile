@@ -24,6 +24,8 @@ gem 'shrine'
 gem 'mini_magick'
 gem 'font-awesome-sass'
 gem 'ransack'
+gem "bootstrap4-datetime-picker-rails"
+gem 'momentjs-rails'
 
 gem 'rails_12factor', group: :production
 

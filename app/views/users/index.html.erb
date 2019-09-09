@@ -5,30 +5,36 @@
         <%= render "search_form"%>
       </div>
       <div class="col-md-9" >
-      <div class="card-deck">
-        <% @users.reverse_each do |user| %>
-          <%= link_to user_path(user.id) do %>
-            <div class="col-sm-4">
-              <div class="card text-white " id="index">
-                <% if user.avatar_image_url.nil?%>
-                  <%= image_tag "/assets/onerror2.png", size: 150, class: "card-img-top" %>
-                <% else %>
-                  <%= image_tag user.avatar_image_url, size: 150, class: "card-img-top" %>
-                <% end %>
-                  <div class="card-body card-body-gray text-white">
-                    ユーザー名: <p class="text-warning"><%= user.name  %></p>
-            <% end %>
-                    <div class="additional_explanation"><%= user.additional_explanation%></div>
-                  </div>
-                  <% if user.video.blank? %>
+        <div class="box888"><p>warning</p></div>
+        <div class="card-deck">
+          <% @users.reverse_each do |user| %>
+            <%= link_to user_path(user.id) do %>
+              <div class="col-sm-4">
+                <div class="card text-white " id="index">
+                  <% if user.avatar_image_url.nil?%>
+                    <%= image_tag "/assets/onerror2.png", size: 150, class: "card-img-top" %>
                   <% else %>
-                    <%= raw(youtube_embed_free(user.video)) %>
+                    <%= image_tag user.avatar_image_url, size: 150, class: "card-img-top" %>
                   <% end %>
-              </div>
-            </div>  
-        <% end %>
+            <% end %>
+                    <div class="card-body card-body-gray text-white">
+                      <%= link_to user.name, user_path(user.id), class: "text-warning" %><br>
+                      <p class="h6">演奏楽器</p>
+                      <%= user.instrument%>
+                      <p class="h6">プロフィール</p>
+                      <div class="additional_explanation">
+                        <%= user.additional_explanation%>
+                      </div>
+                    </div>
+                    <% if user.video.blank? %>
+                    <% else %>
+                      <%= raw(youtube_embed_free(user.video)) %>
+                    <% end %>
+                </div>
+              </div>  
+          <% end %>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
