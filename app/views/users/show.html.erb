@@ -67,7 +67,7 @@
                     <% @products.each do |product|%>
                     <div class="text-center">
                         <p><strong><%= product.song_title %></strong></p>
-                        <%= product.explanation%>
+                        <%= product.content%>
                         <% if product.video.blank? %>
                         <% else %>
                             <%= raw(youtube_embed(product.video)) %>

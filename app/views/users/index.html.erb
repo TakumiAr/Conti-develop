@@ -5,7 +5,6 @@
         <%= render "search_form"%>
       </div>
       <div class="col-md-9" >
-        <div class="box888"><p>warning</p></div>
         <div class="card-deck">
           <% @users.reverse_each do |user| %>
             <%= link_to user_path(user.id) do %>

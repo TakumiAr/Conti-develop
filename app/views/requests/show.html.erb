@@ -1,2 +1,20 @@
-<%= @request.title %><br>
-<%= @request.content %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>リクエストのタイトル</p>
+      <p><%= @request.title %></p>
+      <p>リクエストの内容</p>
+      <%= @request.content %>
+      <p>提案期限</p>
+      <%= @request.proposal_deadline %>
+      <p>予算目安</p>
+      <%= @request.budget_estimate %>
+      <p>画像①</p>
+      <%= @request.image01 %>
+      <p>画像②</p>
+      <%= @request.image02 %>
+      <p>動画①</p>
+      <%= @request.video01 %>
+    </div>
+  </div>
+</div>
