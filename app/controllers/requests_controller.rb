@@ -11,6 +11,7 @@ class RequestsController < ApplicationController
   def create
     @request = current_user.requests.build(request_params)
     if @request.save
+      ContactMailer.contact_mail(@request).deliver 
       redirect_to user_path(current_user.id)
     else
       render 'new'

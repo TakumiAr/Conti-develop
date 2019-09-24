@@ -47,3 +47,4 @@ https://docs.google.com/spreadsheets/d/1S1xNroTYPTEsgTpbdJ6N35Qgfny1puFsBCSzxExC
 - ransack
 - bootstrap4-datetime-picker-rails
 - bootstrap-honoka-rails
+- letter_opener_web

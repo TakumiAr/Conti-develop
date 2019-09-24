@@ -27,6 +27,7 @@ gem 'ransack'
 gem "bootstrap4-datetime-picker-rails"
 gem 'momentjs-rails'
 gem "railroady"
+gem 'letter_opener_web'
 
 gem 'rails_12factor', group: :production
 

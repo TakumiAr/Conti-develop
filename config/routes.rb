@@ -40,4 +40,6 @@ Rails.application.routes.draw do
   resources :gears
   get '/about', :to => "home#about"
 
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
 end
