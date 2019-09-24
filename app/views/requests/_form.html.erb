@@ -31,8 +31,12 @@
           <label class="control-label">動画①</label>
           <%= f.file_field :video01, class: "js-file-upload"%>
         </div>
+        <div class="col-sm-6">
+          <label class="control-label">SkypeID</label>
+          <%= f.text_field :skype_id, class: "form-control", placeholder: "SkypeIDを入力" %>
+        </div>
         <br>
-        <p class="text-center"><%= f.submit "サービスを作成", class: "btn btn-warning" %></p>
+        <p class="text-center"><%= f.submit "リクエストを作成", class: "btn btn-warning" %></p>
       <% end %>
     </div>
   </div>

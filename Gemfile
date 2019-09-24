@@ -26,6 +26,7 @@ gem 'font-awesome-sass'
 gem 'ransack'
 gem "bootstrap4-datetime-picker-rails"
 gem 'momentjs-rails'
+gem "railroady"
 
 gem 'rails_12factor', group: :production
 

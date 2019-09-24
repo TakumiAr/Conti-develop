@@ -8,6 +8,7 @@ class CreateRequests < ActiveRecord::Migration[6.0]
       t.string :video01
       t.string :proposal_deadline
       t.string :budget_estimate
+      t.string :skype_id
       t.integer :host_id
       t.references :user, foreign_key: true
 

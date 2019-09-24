@@ -214,6 +214,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    railroady (1.5.3)
     rails (6.0.0)
       actioncable (= 6.0.0)
       actionmailbox (= 6.0.0)
@@ -366,6 +367,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 3.11)
+  railroady
   rails (~> 6.0.0)
   rails-erd
   rails_12factor

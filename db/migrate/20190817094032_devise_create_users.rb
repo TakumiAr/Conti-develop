@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       t.string :name, null: false
       t.string :instrument
-      t.string :has_been
+      t.integer :has_been
       t.string :sex
       t.text :profile
       t.text :profile_text

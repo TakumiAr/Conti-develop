@@ -50,7 +50,9 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:title, :content, :host_id)
+    params.require(:request).permit(
+      :title, :content, :host_id
+      )
   end
 
   def set_request
