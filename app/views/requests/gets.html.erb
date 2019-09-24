@@ -7,13 +7,13 @@
                 <thead class="thead-dark">
                 <tr>
                     <th>タイトル</th>
-                    <th>
+                    <th></th>
                 </tr>
                 </thead>
                     <% @requests.each do |request| %>
                     <tr>
                         <td><%= request.title %></td>
-                        <td><%= link_to '詳細', request_path(request.id) %> / <%= link_to "編集", edit_request_path(request.id) %> / <%= link_to '削除', request_path(request.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+                        <td><%= link_to '詳細', request_path(request.id) %>
                     </tr>
                     <% end %>
             </table>

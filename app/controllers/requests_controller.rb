@@ -10,15 +10,19 @@ class RequestsController < ApplicationController
 
   def create
     @request = current_user.requests.build(request_params)
+    @request.host_id = params[:host_id]
     if @request.save
-      ContactMailer.contact_mail(@request).deliver 
       redirect_to user_path(current_user.id)
+      ContactMailer.contact_mail(@request).deliver 
     else
-      render 'new'
+      redirect_to root_path
     end
   end
 
   def edit
+    unless @request_params = current_user then
+      redirect_to root_path
+    end
   end
 
   def update
@@ -34,8 +38,12 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    unless @request.user_id = current_user.id then
+      redirect_to root_path
+    else
       @request.destroy
       redirect_to root_path
+    end
   end
 
   def made
@@ -52,7 +60,12 @@ class RequestsController < ApplicationController
 
   def request_params
     params.require(:request).permit(
-      :title, :content, :host_id
+      :title,
+      :content,
+      :host_id,
+      :proposal_deadline,
+      :budget_estimate,
+      :skype_id
       )
   end
 
