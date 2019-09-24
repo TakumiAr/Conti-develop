@@ -38,6 +38,9 @@ https://docs.google.com/spreadsheets/d/1S1xNroTYPTEsgTpbdJ6N35Qgfny1puFsBCSzxExC
 ## ER図
 https://docs.google.com/spreadsheets/d/1S1xNroTYPTEsgTpbdJ6N35Qgfny1puFsBCSzxExClAA/edit?usp=sharing
 
+## 画面遷移図
+
+
 ## 使用gem
 - devise
 - font-awesome-sass
