@@ -42,7 +42,7 @@ https://docs.google.com/spreadsheets/d/1S1xNroTYPTEsgTpbdJ6N35Qgfny1puFsBCSzxExC
 https://github.com/TakumiAr/Conti-develop/blob/master/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%EF%BC%88%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%89.png
 
 ## ワイヤーフレーム
-https://xd.adobe.com/view/6064c2e1-b76c-4ef5-7a6f-8b6d2c655b06-1655/
+https://xd.adobe.com/spec/8fc75095-3040-4470-65ee-3f27c57c3543-f9f6/
 
 ## 使用gem
 - devise
