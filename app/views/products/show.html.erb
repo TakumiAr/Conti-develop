@@ -1,1 +1,19 @@
-<%= @product.song_title %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      タイトル<br>
+      <%= @product.title %><br><br>
+
+      本文<br>
+      <%= @product.content %><br>
+      
+      曲名<br>
+      <%= @product.song_title %><br><br>
+      
+      楽器<br>
+      <%= @product.instrument %><br><br>
+      
+      <%= raw(youtube_embed(@product.video)) %>
+    </div>
+  </div>
+</div>

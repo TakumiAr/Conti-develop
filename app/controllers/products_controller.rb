@@ -75,6 +75,7 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(
       :title, 
+      :content,
       :song_title, 
       :explanation, 
       :instrument, 

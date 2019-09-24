@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.profile_text = @user.profile.body.to_plain_text
+    @user.profile_text = user_params[:profile]
     if @user.update(user_params)
       redirect_to users_mypage_path
     else
