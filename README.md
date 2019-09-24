@@ -39,7 +39,7 @@ https://docs.google.com/spreadsheets/d/1S1xNroTYPTEsgTpbdJ6N35Qgfny1puFsBCSzxExC
 https://docs.google.com/spreadsheets/d/1S1xNroTYPTEsgTpbdJ6N35Qgfny1puFsBCSzxExClAA/edit?usp=sharing
 
 ## 画面遷移図
-
+https://github.com/TakumiAr/Conti-develop/blob/master/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3%EF%BC%88%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%89.png
 
 ## 使用gem
 - devise
