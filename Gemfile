@@ -28,13 +28,16 @@ gem "bootstrap4-datetime-picker-rails"
 gem 'momentjs-rails'
 gem "railroady"
 gem 'letter_opener_web'
-
+gem 'rspec-rails', '~> 4.0.0.beta2'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'rails-erd'
+  gem 'chromedriver-helper'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -44,13 +47,14 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "rails-erd"
   gem "foreman"
-  
 end
 
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'launchy'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
 
   def edit
     unless @request_params = current_user then
-      redirect_to root_path
+      redirect_to users_mypage_path
     end
   end
 
