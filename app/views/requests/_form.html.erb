@@ -13,11 +13,11 @@
         <br>
         <div class="col-sm-8">
           <label class="control-label">提案期限</label>
-          <%= f.text_field :proposal_deadline, class: "form-control datetimepicker-input", placeholder: "提案期限を入力", data: {toggle: "datetimepicker", target: "#start_time"} %>
+          <%= f.date_field :proposal_deadline, class: "form-control datetimepicker-input", placeholder: "提案期限を入力", data: {toggle: "datetimepicker", target: "#start_time"} %>
         </div>
         <div class="col-sm-6">
           <label class="control-label">予算目安</label>
-          <%= f.text_field :budget_estimate, class: "form-control", placeholder: "内容を入力" %>
+          <%= f.text_field :budget_estimate, class: "form-control", placeholder: "単位（円）" %>
         </div>
         <div class="col-sm-3">
           <label class="control-label">画像①</label>

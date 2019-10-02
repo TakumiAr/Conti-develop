@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_102751) do
     t.string "image01"
     t.string "image02"
     t.string "video01"
-    t.string "proposal_deadline"
+    t.datetime "proposal_deadline"
     t.string "budget_estimate"
     t.string "skype_id"
     t.integer "host_id"

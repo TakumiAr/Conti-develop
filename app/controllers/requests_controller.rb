@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
       redirect_to user_path(current_user.id)
       # ContactMailer.contact_mail(@request).deliver 
     else
-      redirect_to root_path
+      render 'new'
     end
   end
 

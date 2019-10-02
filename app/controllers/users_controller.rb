@@ -19,6 +19,10 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @user.id = current_user.id then
+      redirect_to root_path
+    else
+    end
   end
 
   def update
