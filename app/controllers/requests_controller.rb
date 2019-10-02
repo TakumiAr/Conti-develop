@@ -14,7 +14,7 @@ class RequestsController < ApplicationController
     # @request.host_id = params[:host_id]
     if @request.save
       redirect_to user_path(current_user.id)
-      ContactMailer.contact_mail(@request).deliver 
+      # ContactMailer.contact_mail(@request).deliver 
     else
       redirect_to root_path
     end
