@@ -3,23 +3,24 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-6">
-        <%= link_to '自分が送ったリクエストを確認する', requests_made_path, class: "nav-link" %>
-        <%= link_to '自分が受けたリクエストを確認する', requests_gets_path, class: "nav-link" %>
+        <%= link_to '自分が送ったリクエストを確認する', requests_made_path, class: "btn btn-outline-dark" %><br><br>
+        <%= link_to '自分が受けたリクエストを確認する', requests_gets_path, class: "btn btn-outline-dark" %><br><br>
         </div>
         <div class="col-md-6" >
-            <%= link_to 'プロフィールを編集する', edit_user_path(current_user.id), class: "nav-link" %>
-            <%= link_to 'プロフィールを確認する', user_path(current_user.id), class: "nav-link" %>
-            <%= link_to 'サービスを作成する', new_service_path, class: "nav-link" %>
-            <%= link_to 'サービスを確認する', user_services_path(current_user.id), class: "nav-link" %>
-            <%= link_to '練習した曲を記録する', new_product_path, class: "nav-link" %>
-            <%= link_to '練習した曲を確認する', user_products_path(current_user.id), class: "nav-link" %>
-            <%= link_to '自分の機材を登録する', new_gear_path, class: "nav-link" %>
-            <%= link_to '自分の機材を確認する', user_gears_path(current_user.id), class: "nav-link" %>
+            <%= link_to 'プロフィールを編集する', edit_user_path(current_user.id), class: "btn btn-outline-dark" %><br><br>
+            <%= link_to 'プロフィールを確認する', user_path(current_user.id), class: "btn btn-outline-dark" %><br><br>
+            <%= link_to 'サービスを作成する', new_service_path, class: "btn btn-outline-dark" %><br><br>
+            <%= link_to 'サービスを確認する', user_services_path(current_user.id), class: "btn btn-outline-dark" %><br><br>
+            <%= link_to '練習した曲を記録する', new_product_path, class: "btn btn-outline-dark" %><br><br>
+            <%= link_to '練習した曲を確認する', user_products_path(current_user.id), class: "btn btn-outline-dark" %><br><br>
+            <%= link_to '自分の機材を登録する', new_gear_path, class: "btn btn-outline-dark" %><br><br>
+            <%= link_to '自分の機材を確認する', user_gears_path(current_user.id), class: "btn btn-outline-dark" %><br><br>
             <% if current_user.portfolio.nil? %>
-                <%= link_to 'ポートフォリオを登録する', new_portfolio_path, class: "nav-link" %>
+                <%= link_to 'ポートフォリオを登録する', new_portfolio_path, class: "btn btn-outline-dark" %><br><br>
             <% else%>
-                <%= link_to 'ポートフォリオを編集する', edit_portfolio_path(current_user.portfolio.id), class: "nav-link" %>
+                <%= link_to 'ポートフォリオを編集する', edit_portfolio_path(current_user.portfolio.id), class: "btn btn-outline-dark" %><br><br>
             <% end %>
         </div>
     </div>
 </div>
+
