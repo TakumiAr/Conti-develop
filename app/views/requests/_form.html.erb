@@ -36,7 +36,7 @@
           <%= f.text_field :skype_id, class: "form-control", placeholder: "SkypeIDを入力" %>
         </div>
         <br>
-        <%= hidden_field_tag :host_id, @host_id %>
+        <%= f.hidden_field :host_id, value: @host_id %>
         <p class="text-center"><%= f.submit "リクエストを作成", class: "btn btn-warning" %></p>
       <% end %>
     </div>

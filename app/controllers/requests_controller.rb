@@ -9,8 +9,9 @@ class RequestsController < ApplicationController
   end
 
   def create
+    binding.pry
     @request = current_user.requests.build(request_params)
-    @request.host_id = params[:host_id]
+    # @request.host_id = params[:host_id]
     if @request.save
       redirect_to user_path(current_user.id)
       ContactMailer.contact_mail(@request).deliver 
@@ -65,7 +66,8 @@ class RequestsController < ApplicationController
       :host_id,
       :proposal_deadline,
       :budget_estimate,
-      :skype_id
+      :skype_id,
+      :host_id
       )
   end
 
