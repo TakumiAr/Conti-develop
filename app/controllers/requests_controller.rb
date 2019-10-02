@@ -9,7 +9,6 @@ class RequestsController < ApplicationController
   end
 
   def create
-    binding.pry
     @request = current_user.requests.build(request_params)
     # @request.host_id = params[:host_id]
     if @request.save
