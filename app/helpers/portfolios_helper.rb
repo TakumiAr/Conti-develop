@@ -20,7 +20,7 @@ module PortfoliosHelper
             youtube_id = $5
         end
         
-        %Q{<iframe title="YouTube video player" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+        %Q{<iframe title="YouTube video player" src="https://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
     end
 
     def youtube_embed_middle(youtube_url)
@@ -32,7 +32,7 @@ module PortfoliosHelper
             youtube_id = $5
         end
         
-        %Q{<iframe title="YouTube video player"width="500" height="300" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+        %Q{<iframe title="YouTube video player"width="500" height="300" src="https://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
     end
 
 
@@ -45,6 +45,6 @@ module PortfoliosHelper
             youtube_id = $5
         end
         
-        %Q{<iframe title="YouTube video player"width="210" height="118" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+        %Q{<iframe title="YouTube video player"width="210" height="118" src="https://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
     end
 end
