@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
       redirect_to root_path
     else
       @product.destroy
-      redirect_to products_path
+      redirect_to user_path(current_user.id)
     end
   end
 
