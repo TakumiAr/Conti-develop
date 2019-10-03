@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :mypage, :products, :services, :gears]
   def index
     @q = User.includes(:gears).ransack(params[:q])
     @users = @q.result(distinct: true)

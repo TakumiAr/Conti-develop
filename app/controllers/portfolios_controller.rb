@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def new
     @portfolio = Portfolio.new
   end

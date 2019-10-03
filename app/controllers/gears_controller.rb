@@ -1,5 +1,6 @@
 class GearsController < ApplicationController
   before_action :set_gear, only:[:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @gear = Gear.new
@@ -18,7 +19,7 @@ class GearsController < ApplicationController
   end
 
   def edit
-    if @gear.user_id = current_user.id then
+    unless @gear.user_id = current_user.id then
       redirect_to users_mypage_path
     else
     end
@@ -33,8 +34,12 @@ class GearsController < ApplicationController
   end
 
   def destroy
-    @gear.destroy
-    redirect_to gears_path
+    unless @gear.user_id = current_user.id then
+      redirect_to users_mypage_path
+    else
+      @gear.destroy
+      redirect_to gears_path
+    end
   end
 
   private

@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
   end
   
@@ -28,7 +29,7 @@ class RequestsController < ApplicationController
 
   def update
     if @request.update(request_params)
-      redirect_to root_path
+      redirect_to users_mypage_path
     else
       render 'edit'
     end
@@ -40,10 +41,10 @@ class RequestsController < ApplicationController
 
   def destroy
     unless @request.user_id = current_user.id then
-      redirect_to root_path
+      redirect_to users_mypage_path
     else
       @request.destroy
-      redirect_to root_path
+      redirect_to users_mypage_path
     end
   end
 
