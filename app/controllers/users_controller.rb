@@ -75,7 +75,8 @@ class UsersController < ApplicationController
     params.require(:q).permit(
       :name_cont,
       :additional_explanation_or_profile_text_cont,
-      :gears_name_cont
+      :gears_name_cont,
+      :instrument_cont
       )
   end
 
