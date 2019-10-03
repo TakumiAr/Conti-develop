@@ -20,8 +20,9 @@ class RequestsController < ApplicationController
   end
 
   def edit
-    unless @request_params = current_user then
+    unless @request.user_id = current_user.id then
       redirect_to users_mypage_path
+    else
     end
   end
 

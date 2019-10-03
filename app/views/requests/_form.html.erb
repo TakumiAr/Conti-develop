@@ -4,6 +4,7 @@
       <%= form_with(model: @request, local: true) do |f| %>
         <div class="col-sm-10">
           <label class="control-label">リクエストのタイトル</label>
+          <span class="badge badge-danger">必須</span>
           <%= f.text_field :title, class: "form-control", placeholder: "リクエストのタイトルを入力"%>
         </div>
         <div class="col-sm-12">
@@ -13,10 +14,12 @@
         <br>
         <div class="col-sm-8">
           <label class="control-label">提案期限</label>
+          <span class="badge badge-danger">必須</span>
           <%= f.date_field :proposal_deadline, class: "form-control datetimepicker-input", placeholder: "提案期限を入力", data: {toggle: "datetimepicker", target: "#start_time"} %>
         </div>
         <div class="col-sm-6">
           <label class="control-label">予算目安</label>
+          <span class="badge badge-danger">必須</span>
           <%= f.text_field :budget_estimate, class: "form-control", placeholder: "単位（円）" %>
         </div>
         <div class="col-sm-3">

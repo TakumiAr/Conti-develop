@@ -1,7 +1,7 @@
 class CreateRequests < ActiveRecord::Migration[6.0]
   def change
     create_table :requests do |t|
-      t.string :title
+      t.string :title, null: false
       t.text :content
       t.string :image01
       t.string :image02

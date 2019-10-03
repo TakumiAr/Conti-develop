@@ -19,8 +19,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if @user.id = current_user.id then
-      redirect_to root_path
+    unless @user.id = current_user.id then
+      redirect_to users_mypage_path
     else
     end
   end

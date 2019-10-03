@@ -18,6 +18,10 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    unless @service.user_id = current_user.id then
+      redirect_to users_mypage_path
+    else
+    end
   end
 
   def update

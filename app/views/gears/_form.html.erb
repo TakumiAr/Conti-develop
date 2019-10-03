@@ -4,6 +4,7 @@
       <%= form_with(model: @gear, local: true) do |f| %>
         <div class="col-sm-6">
           <label class="control-label">機材の名前</label>
+          <span class="badge badge-danger">必須</span>
           <%= f.text_field :name, class: "form-control", placeholder: "機材の名前を入力"%>
         </div>
         <div class="col-sm-5">

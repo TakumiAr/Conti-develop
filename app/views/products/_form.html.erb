@@ -5,6 +5,7 @@
       <%= form_with(model: @product, local: true ) do |f| %>
         <div class="col-sm-12">
           <label class="control-label">タイトル</label>
+          <span class="badge badge-danger">必須</span>
           <%= f.text_field :title, class: "form-control", placeholder: "メモタイトルを入力"  %>
         </div>
         <div class="col-sm-12">
