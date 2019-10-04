@@ -30,6 +30,7 @@ gem "railroady"
 gem 'letter_opener_web'
 gem 'rspec-rails', '~> 4.0.0.beta2'
 gem 'rails_12factor', group: :production
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
