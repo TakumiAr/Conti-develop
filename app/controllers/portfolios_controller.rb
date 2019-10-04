@@ -15,7 +15,7 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
-    unless @portfolio.user_id = current_user.id then
+    unless @portfolio.user_id == current_user.id then
       redirect_to users_mypage_path
     else
     end

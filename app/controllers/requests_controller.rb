@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
   end
 
   def edit
-    unless @request.user_id = current_user.id then
+    unless @request.user_id == current_user.id then
       redirect_to users_mypage_path
     else
     end
@@ -40,7 +40,7 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    unless @request.user_id = current_user.id then
+    unless @request.user_id == current_user.id then
       redirect_to users_mypage_path
     else
       @request.destroy

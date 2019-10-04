@@ -19,7 +19,7 @@ class GearsController < ApplicationController
   end
 
   def edit
-    unless @gear.user_id = current_user.id then
+    unless @gear.user_id == current_user.id then
       redirect_to users_mypage_path
     else
     end
@@ -34,7 +34,7 @@ class GearsController < ApplicationController
   end
 
   def destroy
-    unless @gear.user_id = current_user.id then
+    unless @gear.user_id == current_user.id then
       redirect_to users_mypage_path
     else
       @gear.destroy

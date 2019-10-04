@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    unless @service.user_id = current_user.id then
+    unless @service.user_id == current_user.id then
       redirect_to users_mypage_path
     else
     end
@@ -34,8 +34,12 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service.destroy
-    redirect_to root_path
+    unless @service.user_id == current_user.id then
+      redirect_to users_mypage_path
+    else
+      @service.destroy
+      redirect_to root_path
+    end
   end
 
   private
