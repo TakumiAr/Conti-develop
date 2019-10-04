@@ -71,7 +71,6 @@ class ProductsController < ApplicationController
     params.require(:q).permit(
       :title_cont,
       :song_title_cont,
-      :content_cont
       )
   end
 
