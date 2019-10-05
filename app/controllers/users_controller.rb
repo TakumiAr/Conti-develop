@@ -61,6 +61,7 @@ class UsersController < ApplicationController
       :name,
       :email,
       :profile, 
+      :sex,
       :avatar_image, 
       :video,
       :instrument,

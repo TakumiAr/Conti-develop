@@ -1,12 +1,26 @@
 <div class="container mt-3">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8" >
             <% if @user.avatar_image_url.nil?%>
-                <%= image_tag "/assets/onerror.png", size: 200, class: "img-circle" %>
+                <%= image_tag "/assets/onerror.png" %>
             <% elsif %>
                 <%= image_tag @user.avatar_image_url, onerror: "/assets/onerror.png", height: 200, class: "rounded-circle" %>
             <% end %>
             名前: <%= @user.name%>
+            　性別: 
+            <% case @user.sex %>
+                <% when "男" then %>
+                男
+                <% when "女" then %>
+                女
+                <% else %>
+                登録されていません
+            <% end%>
+            <% if @user.has_been.nil? %>
+            <%else%>
+            　<%= @user.instrument %>歴 <%= @user.has_been %>年
+            <% end %>
+
             <br><br>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -91,6 +105,7 @@
             <% @user.services.each do |service| %>
                 <p class="text-center service_top"><%= service.title %></p>
                 <%= service.content%>
+                カテゴリー: <%= service.service_category%>
                 <br>
             <% end %>
         </div>
